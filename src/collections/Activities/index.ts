@@ -98,6 +98,21 @@ export const Activities: CollectionConfig<'activities'> = {
           label: 'Content',
         },
         {
+          fields: [
+            {
+              name: 'activityDate',
+              type: 'date',
+              admin: {
+                date: {
+                  pickerAppearance: 'dayAndTime',
+                },
+              },
+              required: true,
+            },
+          ],
+          label: 'Meta',
+        },
+        {
           name: 'meta',
           label: 'SEO',
           fields: [

@@ -10,6 +10,10 @@ const defaultCollectionLabels = {
     plural: 'Posts',
     singular: 'Post',
   },
+  activities: {
+    plural: 'Activities',
+    singular: 'Activity',
+  },
 }
 
 export const PageRange: React.FC<{
@@ -44,6 +48,8 @@ export const PageRange: React.FC<{
     defaultLabels ||
     {}
 
+  return <div className={[className, 'font-semibold'].filter(Boolean).join(' ')}></div>
+  /*
   return (
     <div className={[className, 'font-semibold'].filter(Boolean).join(' ')}>
       {(typeof totalDocs === 'undefined' || totalDocs === 0) && 'Search produced no results.'}
@@ -54,4 +60,5 @@ export const PageRange: React.FC<{
         }`}
     </div>
   )
+  */
 }

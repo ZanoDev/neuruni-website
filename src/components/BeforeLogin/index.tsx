@@ -4,7 +4,7 @@ const BeforeLogin: React.FC = () => {
   return (
     <div>
       <p>
-        <b>Log in to the admin dashboard</b>
+        <b>Accesso al pannello amministratore</b>
       </p>
     </div>
   )

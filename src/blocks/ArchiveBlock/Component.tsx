@@ -5,7 +5,7 @@ import { getPayload } from 'payload'
 import React from 'react'
 import RichText from '@/components/RichText'
 
-import { CollectionArchive } from '@/components/CollectionArchive'
+import { PostsCollectionArchive } from '@/components/PostsCollectionArchive'
 
 export const ArchiveBlock: React.FC<
   ArchiveBlockProps & {
@@ -59,7 +59,7 @@ export const ArchiveBlock: React.FC<
           <RichText className="ms-0 max-w-[48rem]" data={introContent} enableGutter={false} />
         </div>
       )}
-      <CollectionArchive posts={posts} />
+      <PostsCollectionArchive posts={posts} />
     </div>
   )
 }

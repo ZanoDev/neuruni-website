@@ -1,6 +1,6 @@
 import type { Metadata } from 'next/types'
 
-import { PostsCollectionArchive } from '@/components/PostsCollectionArchive'
+import { ActivitiesCollectionArchive } from '@/components/ActivitiesCollectionArchive'
 import { PageRange } from '@/components/PageRange'
 import { Pagination } from '@/components/Pagination'
 import configPromise from '@payload-config'
@@ -14,8 +14,8 @@ export const revalidate = 600
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })
 
-  const posts = await payload.find({
-    collection: 'posts',
+  const activities = await payload.find({
+    collection: 'activities',
     depth: 1,
     limit: 12,
     overrideAccess: false,
@@ -32,24 +32,24 @@ export default async function Page() {
       <PageClient />
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>Posts</h1>
+          <h1>Attività</h1>
         </div>
       </div>
 
       <div className="container mb-8">
         <PageRange
-          collection="posts"
-          currentPage={posts.page}
+          collection="activities"
+          currentPage={activities.page}
           limit={12}
-          totalDocs={posts.totalDocs}
+          totalDocs={activities.totalDocs}
         />
       </div>
 
-      <PostsCollectionArchive posts={posts.docs} />
+      <ActivitiesCollectionArchive activities={activities.docs} />
 
       <div className="container">
-        {posts.totalPages > 1 && posts.page && (
-          <Pagination page={posts.page} totalPages={posts.totalPages} />
+        {activities.totalPages > 1 && activities.page && (
+          <Pagination page={activities.page} totalPages={activities.totalPages} />
         )}
       </div>
     </div>
@@ -58,6 +58,6 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `NeurUni Website Posts`,
+    title: `NeurUni Website Activities`,
   }
 }
