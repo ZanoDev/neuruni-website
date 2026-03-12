@@ -8,7 +8,7 @@ import { Media } from '@/components/Media'
 export const ActivityHero: React.FC<{
   activity: Activity
 }> = ({ activity }) => {
-  const { heroImage, publishedAt, title } = activity
+  const { heroImage, publishedAt, activityDate, title } = activity
 
   return (
     <div className="relative -mt-[10.4rem] flex items-end">
@@ -21,9 +21,14 @@ export const ActivityHero: React.FC<{
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">
             {publishedAt && (
               <div className="flex flex-col gap-1">
-                <p className="text-sm">Date Published</p>
-
+                <p className="text-sm">Pubblicata il</p>
                 <time dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
+              </div>
+            )}
+            {activityDate && (
+              <div className="flex flex-col gap-1">
+                <p className="text-sm">Data e ora attività</p>
+                <time dateTime={activityDate}>{formatDateTime(activityDate, true)}</time>
               </div>
             )}
           </div>

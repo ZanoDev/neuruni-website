@@ -105,6 +105,7 @@ export const Activities: CollectionConfig<'activities'> = {
               admin: {
                 date: {
                   pickerAppearance: 'dayAndTime',
+                  displayFormat: 'dd/MM/yyyy - HH:mm',
                 },
               },
               required: true,
@@ -147,6 +148,7 @@ export const Activities: CollectionConfig<'activities'> = {
       admin: {
         date: {
           pickerAppearance: 'dayAndTime',
+          displayFormat: 'dd/MM/yyyy - HH:mm',
         },
         position: 'sidebar',
       },

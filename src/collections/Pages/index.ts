@@ -115,6 +115,7 @@ export const Pages: CollectionConfig<'pages'> = {
       type: 'date',
       admin: {
         position: 'sidebar',
+        // displayFormat: 'dd/MM/yyyy - HH:mm'  gives error for some reason, no time for this bullshittery
       },
     },
     slugField(),

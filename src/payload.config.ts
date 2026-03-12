@@ -21,6 +21,7 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
+    dateFormat: 'dd/MM/yyyy - HH:mm',
     components: {
       beforeLogin: ['@/components/BeforeLogin'],
     },
