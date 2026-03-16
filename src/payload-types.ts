@@ -214,6 +214,7 @@ export interface Page {
       }
     | ArchiveBlock
     | FormBlock
+    | MapBlock
   )[];
   meta?: {
     title?: string | null;
@@ -786,6 +787,21 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MapBlock".
+ */
+export interface MapBlock {
+  /**
+   * @minItems 2
+   * @maxItems 2
+   */
+  position: [number, number];
+  zoom: number;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'mapBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "activities".
  */
 export interface Activity {
@@ -1138,6 +1154,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        mapBlock?: T | MapBlockSelect<T>;
       };
   meta?:
     | T
@@ -1234,6 +1251,16 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MapBlock_select".
+ */
+export interface MapBlockSelect<T extends boolean = true> {
+  position?: T;
+  zoom?: T;
   id?: T;
   blockName?: T;
 }
