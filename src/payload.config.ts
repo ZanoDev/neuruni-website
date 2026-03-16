@@ -19,8 +19,16 @@ import { Activities } from './collections/Activities'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+// https://payloadcms.com/docs/admin/metadata
+// Questo link contiene un concentrato di info utili, meglio tenerlo qua fino alla fine
+// perchè potrebbero saltare fuori cose difficili da ricordare tipo il come appare la preview
+// del sito quando lo si condivide sui social o sulle app di messaggistica
 export default buildConfig({
   admin: {
+    meta: {
+      title: 'Pannello Admin',
+      titleSuffix: '- NeurUni',
+    },
     dateFormat: 'dd/MM/yyyy - HH:mm',
     components: {
       beforeLogin: ['@/components/BeforeLogin'],
