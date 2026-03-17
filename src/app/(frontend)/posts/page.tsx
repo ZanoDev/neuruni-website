@@ -33,6 +33,9 @@ export default async function Page() {
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
           <h1>Posts</h1>
+          <p>
+            Qua si può scrivere quello che volete, o fare tutto in generale, ma va fatto a codice
+          </p>
         </div>
       </div>
 

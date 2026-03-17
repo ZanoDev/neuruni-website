@@ -28,6 +28,13 @@ export default buildConfig({
     meta: {
       title: 'Pannello Admin',
       titleSuffix: '- NeurUni',
+      icons: [
+        {
+          rel: 'icon',
+          type: 'image/ico',
+          url: '/favicon-test.ico',
+        },
+      ],
     },
     dateFormat: 'dd/MM/yyyy - HH:mm',
     components: {
