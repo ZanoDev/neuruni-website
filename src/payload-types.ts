@@ -823,7 +823,9 @@ export interface Activity {
     };
     [k: string]: unknown;
   };
-  activityDate: string;
+  fields: {
+    activityDate: string;
+  };
   meta?: {
     title?: string | null;
     /**
@@ -1303,7 +1305,11 @@ export interface ActivitiesSelect<T extends boolean = true> {
   title?: T;
   heroImage?: T;
   content?: T;
-  activityDate?: T;
+  fields?:
+    | T
+    | {
+        activityDate?: T;
+      };
   meta?:
     | T
     | {

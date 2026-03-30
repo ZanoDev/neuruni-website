@@ -1,12 +1,12 @@
 import type { Metadata } from 'next/types'
 
-import { ActivitiesCollectionArchive } from '@/components/ActivitiesCollectionArchive'
 import { PageRange } from '@/components/PageRange'
 import { Pagination } from '@/components/Pagination'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
+import ActivitiesCalendar from '@/components/ActivitiesCalendar'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -23,9 +23,16 @@ export default async function Page() {
       title: true,
       slug: true,
       categories: true,
+      fields: true,
       meta: true,
     },
   })
+
+  const events = activities.docs.map((activity) => ({
+    title: activity.title,
+    date: activity.fields.activityDate,
+    url: `/activities/${activity.slug}`,
+  }))
 
   return (
     <div className="pt-24 pb-24">
@@ -45,7 +52,7 @@ export default async function Page() {
         />
       </div>
 
-      <ActivitiesCollectionArchive activities={activities.docs} />
+      <ActivitiesCalendar events={events} />
 
       <div className="container">
         {activities.totalPages > 1 && activities.page && (

@@ -112,6 +112,7 @@ export const Activities: CollectionConfig<'activities'> = {
             },
           ],
           label: 'Meta',
+          name: 'fields',
         },
         {
           name: 'meta',

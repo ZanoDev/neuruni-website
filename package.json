@@ -22,6 +22,9 @@
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.20",
+    "@fullcalendar/interaction": "^6.1.20",
+    "@fullcalendar/react": "^6.1.20",
     "@payloadcms/admin-bar": "3.79.0",
     "@payloadcms/db-mongodb": "3.79.0",
     "@payloadcms/live-preview-react": "3.79.0",
