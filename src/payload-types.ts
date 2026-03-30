@@ -825,6 +825,7 @@ export interface Activity {
   };
   fields: {
     activityDate: string;
+    color: 'white' | 'blue' | 'red' | 'yellow' | 'green' | 'purple' | 'brown' | 'orange';
   };
   meta?: {
     title?: string | null;
@@ -1309,6 +1310,7 @@ export interface ActivitiesSelect<T extends boolean = true> {
     | T
     | {
         activityDate?: T;
+        color?: T;
       };
   meta?:
     | T

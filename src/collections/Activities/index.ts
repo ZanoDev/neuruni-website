@@ -101,6 +101,7 @@ export const Activities: CollectionConfig<'activities'> = {
           fields: [
             {
               name: 'activityDate',
+              label: 'Data svolgimento',
               type: 'date',
               admin: {
                 date: {
@@ -108,6 +109,47 @@ export const Activities: CollectionConfig<'activities'> = {
                   displayFormat: 'dd/MM/yyyy - HH:mm',
                 },
               },
+              required: true,
+            },
+            {
+              name: 'color',
+              label: 'Colore a calendario',
+              type: 'select',
+              defaultValue: 'white',
+              options: [
+                {
+                  label: 'Bianco',
+                  value: 'white',
+                },
+                {
+                  label: 'Azzurro',
+                  value: 'blue',
+                },
+                {
+                  label: 'Rosso',
+                  value: 'red',
+                },
+                {
+                  label: 'Giallo',
+                  value: 'yellow',
+                },
+                {
+                  label: 'Verde',
+                  value: 'green',
+                },
+                {
+                  label: 'Viola',
+                  value: 'purple',
+                },
+                {
+                  label: 'Marrone',
+                  value: 'brown',
+                },
+                {
+                  label: 'Arancione',
+                  value: 'orange',
+                },
+              ],
               required: true,
             },
           ],

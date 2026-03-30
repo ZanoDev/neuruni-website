@@ -222,3 +222,74 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+.fc-event-title {
+  font-weight: 800;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.fc-event-time {
+  font-weight: 700;
+}
+
+.fc-event {
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+.fc-toolbar-title {
+    text-transform: capitalize;
+  }
+
+/* visualizzazione calendario su mobile */
+@media (max-width: 768px) {
+
+  .fc {
+    font-size: 12px;
+  }
+
+  .fc-toolbar-title {
+    font-size: 16px;
+  }
+
+  .fc .fc-button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .fc-header-toolbar {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .fc .fc-daygrid-day-frame {
+    min-height: 70px;
+  }
+
+  .fc-event-title {
+    font-size: 11px;
+  }
+}
+
+.fc .fc-toolbar button.fc-button {
+    background-color: #7a00cc;  /* colore di sfondo in esadecimale */
+    color: #FFFFFF;             /* colore del testo */
+    font-weight: 600;           /* font-semibold equivalente */
+    border-radius: 0.175rem;    /* rounded-md */
+    padding: 0.25rem 0.75rem;   /* px-3 py-1 */
+    border: none;               /* rimuove eventuali bordi di default */
+    cursor: pointer;            /* cursore a mano */
+    transition: background-color 0.2s;
+}
+
+/* Hover */
+.fc .fc-toolbar button.fc-button:hover {
+    background-color: #5c0099;  /* colore hover */
+}
+
+/* Pulsante attivo / selezionato */
+.fc .fc-toolbar button.fc-button.fc-button-active {
+    background-color: #732673;  /* colore pulsante attivo */
+    color: #FFFFFF;
+}
+
