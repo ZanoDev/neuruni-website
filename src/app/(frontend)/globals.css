@@ -224,12 +224,15 @@ html[data-theme='light'] {
 }
 
 .fc-event-title {
-  font-weight: 800;
+  font-weight: 700;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-overflow: ellipsis;   /* aggiunge i tre puntini */
+  white-space: nowrap;
 }
 
 .fc-event-time {
-  font-weight: 700;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .fc-event {
@@ -293,3 +296,29 @@ html[data-theme='light'] {
     color: #FFFFFF;
 }
 
+/* Barra giorni settimana */
+[data-theme="light"] .fc .fc-col-header,
+[data-theme="light"] .fc .fc-col-header-cell {
+  background-color: #f3f3f3;
+  color: #4d4d4d;
+}
+
+[data-theme="dark"] .fc .fc-col-header,
+[data-theme="dark"] .fc .fc-col-header-cell {
+  background-color: #333333;
+  color: #d9d9d9;
+}
+
+/* Colore di sfondo */
+[data-theme="light"] .fc .fc-daygrid, 
+[data-theme="light"] .fc .fc-timegrid {
+  background-color: #fdfdfd;
+  color: #4d4d4d;
+  
+}
+
+[data-theme="dark"] .fc .fc-daygrid, 
+[data-theme="dark"] .fc .fc-timegrid {
+  background-color: #4d4d4d;
+  color: #d9d9d9;
+}

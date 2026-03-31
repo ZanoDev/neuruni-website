@@ -29,7 +29,7 @@ export default function ActivitiesCalendar({ events }: Props) {
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         locale={itLocale}
         height="auto"
-        allDayClassNames={['font-sans', 'text-sm']}
+        allDaySlot={false}
         slotMinTime="08:00:00"
         slotMaxTime="24:00:00"
         headerToolbar={{
@@ -50,6 +50,13 @@ export default function ActivitiesCalendar({ events }: Props) {
           if (info.event.url) {
             router.push(info.event.url)
           }
+        }}
+        dayMaxEventRows={true}
+        eventDisplay="block"
+        eventTimeFormat={{
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
         }}
       />
     </div>
