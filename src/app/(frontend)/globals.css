@@ -250,9 +250,24 @@ html[data-theme='light'] {
   .fc {
     font-size: 12px;
   }
+  
+  .fc .fc-header-toolbar {
+    display: flex;
+    flex-direction: column;   /* impila gli elementi */
+    align-items: center;      /* centra tutto */
+    gap: 6px;
+  }
+
+  .fc .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 4px;
+  }
 
   .fc-toolbar-title {
     font-size: 16px;
+    text-align: center;
   }
 
   .fc .fc-button {
@@ -275,7 +290,7 @@ html[data-theme='light'] {
 }
 
 .fc .fc-toolbar button.fc-button {
-    background-color: #7a00cc;  /* colore di sfondo in esadecimale */
+    background-color: #732673;  /* colore di sfondo in esadecimale */
     color: #FFFFFF;             /* colore del testo */
     font-weight: 600;           /* font-semibold equivalente */
     border-radius: 0.175rem;    /* rounded-md */
@@ -283,6 +298,7 @@ html[data-theme='light'] {
     border: none;               /* rimuove eventuali bordi di default */
     cursor: pointer;            /* cursore a mano */
     transition: background-color 0.2s;
+    min-height: 35px;
 }
 
 /* Hover */

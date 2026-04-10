@@ -22,6 +22,7 @@ type Props = {
 
 export default function ActivitiesCalendar({ events }: Props) {
   const router = useRouter()
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 font-mono">
@@ -33,16 +34,16 @@ export default function ActivitiesCalendar({ events }: Props) {
         slotMinTime="08:00:00"
         slotMaxTime="24:00:00"
         headerToolbar={{
-          left: 'prev today next',
+          left: 'timeGridDay timeGridWeek dayGridMonth',
           center: 'title',
-          right: 'timeGridDay timeGridWeek dayGridMonth',
+          right: 'prev today next',
         }}
         buttonText={{
-          timeGridDay: 'Oggi',
+          timeGridDay: 'Giorno',
           timeGridWeek: 'Settimana',
           dayGridMonth: 'Mese',
         }}
-        initialView="timeGridWeek"
+        initialView={isMobile ? 'timeGridDay' : 'timeGridWeek'}
         events={events}
         eventClick={(info) => {
           info.jsEvent.preventDefault()
